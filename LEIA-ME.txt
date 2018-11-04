@@ -1,0 +1,35 @@
+Pasta com arquivos utilizados no trabalho de conclusão de curso de Luiz Victor Linhares Rocha para a obtenção do titulo de Engenheiro eletricista pela Escola de Engenharia de São Carlos na Universidade de São Paulo (EESC-USP)
+
+Resumo das pastas:
+
+* dataset/ arquivos CSV com os dados de treino e de validação, cada arquivo é um csv conta com 100.001 linhas, sendo o primeiro o cabeçãlho indicando qual o parâmetro da coluna
+    o nome indica o tipo de arquivo e significam:
+    - train[N].csv - dados de entrada para o treino da rede para resolução do problema com N barras
+    - label[N].csv - dados de saída desejadas para o treino da rede para resolução do problema com N barras
+* images/ imagens utilizadas no desenvolvimento do arquivo LATEX
+* modelOuput/ arquivos de saída dos scripts de treino de rede
+    Possuem o formato:
+    - errors.ods - Planilha de análise de erro para o treino de diferentes topologias
+    - history[N]_[a1]_[a2] - arquivo binário com dados do histórico de treino da rede neural da resolução do problema com N barras possuindo a1 neuronios na primeira camada e a2 neurônios na segunda camada
+    - model[N]_[a1]_[a2] - arquivo binário com dados do modelo da rede neural da resolução do problema com N barras possuindo a1 neuronios na primeira camada e a2 neurônios na segunda camada
+    - outputSummary[N]_[a1]_[a2].csv - Planilha, no formato csv, de resultado do erro quadrático médio para a rede neural da resolução do problema com N barras possuindo a1 neuronios na primeira camada e a2 neurônios na segunda camada
+    - summary[N] - Resumo sobre os dados de entrada e saída para o treino da rede  neural da resolução do problema com N barras possuindo a1 neuronios na primeira camada e a2 neurônios na segunda camada
+    - weights[N]_[a1]_[a2].csv - Pesos resultantes que definem a rede neural da resolução do problema com N barras possuindo a1 neuronios na primeira camada e a2 neurônios na segunda camada
+* netData/ arquivos cdf descrevendo as redes de potências utilizada como base de estudo
+* python/ scripts python para treino de rede neural
+    - inputDataInfoPrinter.py: Script de geração de arquivos .csv com informação generalizada de média e desvio padrão de arquivos de treino geradas pelo programa em c++
+    - netToCsv.py: Script de conversão de arquivo binário .h5, salvo pelo tensorflow, para .csv, descrevendo os pesos resultantes
+    - netTrainer.py: Script principal de treino de rede neural, comparando diferentes topologias e seus erros
+    - outputDataInfoPrinter.py: Script de geração de arquivos .csv com informação de erro, normalizado e não-normalizado de cada saída da rede neural
+    - singleNetTrainer.py: Script de treino de apenas 1 rede, utilizado para estudos
+    - speedTestGPU.py: Script de comparação de performance entre utilização de CPU e GPU
+* rede/ código fonte c++ criado para geração de dados e resolução de fluxo de potência
+* test/ código de teste c++ para teste das classes c++
+* util/ código de utilidades para o desenvolvimento do programa c++
+
+resumo dos arquivos:
+    - generatePoints.cpp: arquivo com função main para ser compilado em um programa que recebe um arquivo CDF, aloca PMUs e salva arquivos de entrada e saída para treino de uma rede neural
+    - CMakeLists.txt: Arquivo de instruções de compilação pelo CMake
+
+Observações:
+    Para abrir arquivos .CSV no excel ou openoffice é importante atribuir o tipo de número de ponto flutuante para Ingles americano.
