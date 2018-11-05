@@ -60,12 +60,12 @@ with open(outputFilePath, 'wt', newline='') as outFile:
 
 def plot_history(history):
     plt.figure()
-    plt.xlabel('Epoch')
-    plt.ylabel('Mean Abs Error')
+    plt.xlabel('Epoca')
+    plt.ylabel('Erro absoluto médio')
     plt.plot(history['epoch'], np.array(history['mean_absolute_error']),
-            label='Train Loss')
+            label='Treino')
     plt.plot(history['epoch'], np.array(history['val_mean_absolute_error']),
-            label = 'Val loss')
+            label = 'Validação')
     plt.legend()
     plt.show()
 
