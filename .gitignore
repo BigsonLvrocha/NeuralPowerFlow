@@ -10,6 +10,4 @@ CTestTestfile.cmake
 /.vscode/*
 /build/*
 /libraries/
-/dataset/*
-/images/*
-/modelOutput/*
+/dataset/*.csv
