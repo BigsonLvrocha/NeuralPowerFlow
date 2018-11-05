@@ -48,7 +48,7 @@ with open(historyFilePath, 'rb') as historyFile:
 predicted = model.predict(inputData)
 errors = predicted - outputData
 errorsAbs = np.abs(errors)
-errorsMean = errors.mean(axis=0)
+errorsMean = errorsAbs.mean(axis=0)
 errorsScaled = np.multiply(errorsMean, outputStd, out=np.zeros_like(errorsMean), where=outputStd!=0)
 weights = model.get_weights()
 print(errors)
